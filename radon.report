@@ -1,0 +1,6 @@
+src\start_simulation.py
+    F 50:0 compute_button_color - B
+    F 118:0 handle_events - B
+
+2 blocks (classes, functions, methods) analyzed.
+Average complexity: B (6.0)

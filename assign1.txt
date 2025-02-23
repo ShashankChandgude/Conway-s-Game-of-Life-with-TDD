@@ -1,0 +1,51 @@
+Assign1: Due 11:59PM February 21
+
+***Please review the top part of ../hw1/hw1.txt***
+***Your chance of success greatly increases if you start very early. Your chance of failure increases if you start late.
+
+Using Test First Development (no code without test first) implement the problem you designed in hw2. Feel free to evolve that design and use your judgment to make changes based on the improved understanding and learning. You are not required, nor expected, to use all or any part of the design you created in hw2.
+
+Take small steps, ask for frequent reviews.
+
+First start with a tests list (check in a tests.txt file) and a canary test. Implement at most two other tests, in addition to the canary test, and minimum code to make those tests to pass. This is a great first step to complete and ask for a review.
+
+After completing the assignment (and only after) answer the following questions:
+
+1. What did you learn mainly in this assignment?
+
+We learned an important lesson of writing code which is essential to the task at hand. Understood the usefulness of YAGNI (You Aren't Gonna Need It yet) principle. As the first few reviews we wrote a lot of code which was totally scrapped as we didn’t need it. And it was replaced by the code which was absolutely essential.
+
+This assignment deepened our understanding of TDD. Writing tests before writing the actual implementation helped solidify the understanding of the problem and ensured correctness from the start. It encouraged small, incremental changes. We gained valuable knowledge in terms of testing, specifically unit testing. We also learned that each test case should strive to test the piece of code, which is small, independent and valuable. Making sure every necessary functionality is tested.
+
+We gained valuable knowledge in strategic design and tactical design. The initial high-level Strategic design from HW2 was refined based on practical development and feedback. Each review prompted improvements, showing how design can adapt as understanding grows. And after all these reviews emerged a tactical design which necessarily deviated from strategic design, as our understanding of the problem grew.
+
+The distinction between the simulation logic (e.g., game_of_life.py) and the GUI (start_simulation.py) promoted separation of concerns. This separation allowed testing the core logic without GUI interference. We also leaned the importance of having more tests at the logic level and less tests at the GUI level, as even if the GUI is completely overhauled we can still effectively make the core logic work. As we already have the tests which will provide us with instant and valuable feedback.
+
+We learned the importance of not being overly dependent on libraries and not using them when they have minimal use in the code. We learned some important functional programming concepts along the way such as using list comprehension and avoiding mutable state when possible. Resulting in cleaner, more concise code. 
+
+Lastly, the importance of feedback loop is one of the essential lessons learned in the assignment. Regular feedback from the venkat emphasized the value of constant validation and refinement, preventing large-scale mistakes. We worked in a fairly similar manner to which an agile team works, venkat as scrum master and we as scrum team. Having user stories which in our case were the tests associated with a functionality and minimal code to make it work. This gave firsthand experience in the effectiveness of agile methodology.
+
+
+2. How is your current design different, if at all, from the strategic design created in hw2?
+
+Our current design is quite different from the initial MVC design in hw2. In hw2, we planned for a Grid and Cell structure which had a grid and a cell class, but the final design does not use an explicit grid. Instead, it tracks only live cells and their neighbors’ using signals.
+
+In hw2, we imagined that a controller would handle user interactions like starting and stopping the game. In the final design, there is no separate controller. The game runs continuously with each generation updating every second. 
+
+The structure for the view did not drastically change as the GUI in the current design is as we planned it to be, just simpler. It only displays the state of cells and does not handle complex user input or adjustments to the grid yet.
+
+The final design is more efficient than the hw2 design because it avoids looping over a large grid. It only considers cells near live cells (Signals + Sparse), which is better for an infinite universe.
+
+
+3. Were there any surprises or things you did not expect along the way? Any 
+particular problem faced, things you had to tackle that you did not expect 
+beforehand?
+
+Understanding what infinite universe is and coming up with an approach to handling the Infinite Universe was the first surprise as well as the problem. This led us to gradually shift to a Signal-Based Approach which is conceptually harder to grasp but is more efficient and elegant.
+
+Another big task was Unlearning and relearning, Unlearning the practices such as excessive unnecessary use of libraries and use variable when not necessary, incresing mutation in the code. Relearning list comprehension to avoid mutation and use of functions we already have insted of using multiple seperate libraries.
+
+Handling GUI updates with Pygame was harder than expected. Initially, we thought of combining simulation and display logic, but later, it was split into clear functions for rendering vs. simulation based on feedback.
+
+Working with paver and radon was new. Understanding how pavement.py orchestrates tasks like setup, testing, and running the GUI took some time but it was a valuable learning experience.
+
